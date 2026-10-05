@@ -6,7 +6,7 @@ Los programas están implementados en **Elixir**.
 
 ## Video
 
-🎥 **Ver la explicación y la ejecución:** _(pendiente de subir)_
+🎥 **Ver la explicación y la ejecución:** https://youtu.be/BV_vV0sUj00
 
 ## Qué hay en cada archivo
 
