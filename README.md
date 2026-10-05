@@ -19,6 +19,7 @@ Los programas están implementados en **Elixir**.
 | `correr_todo.exs` | Corre los tres problemas de una sola vez |
 | `resultados/` | Las tablas (`.csv`) y las gráficas (`.svg`) que genera el programa |
 | `respuestas/` | El PDF con el procedimiento completo del cálculo de complejidad |
+| `capturas/` | Las imágenes que se usan en este README |
 
 La idea de dividirlo así es que cada problema se pueda correr y revisar por separado, y que toda la parte repetida (medir, guardar, graficar) esté en un solo lugar en vez de copiada tres veces.
 
@@ -67,6 +68,20 @@ Por cada problema se crean dos archivos dentro de `resultados/`:
 
 Las gráficas tienen los dos ejes en escala logarítmica, porque los tiempos van desde millonésimas de segundo hasta minutos y en una escala normal todos los puntos chicos quedarían pegados al cero.
 
+## El cálculo de la complejidad
+
+El procedimiento completo, ciclo por ciclo, está en **[`respuestas/complejidad.pdf`](respuestas/complejidad.pdf)**. Estas son sus tres páginas:
+
+| Problema 1 | Problema 2 | Problema 3 |
+| --- | --- | --- |
+| ![Análisis del problema 1](capturas/analisis_pagina1.png) | ![Análisis del problema 2](capturas/analisis_pagina2.png) | ![Análisis del problema 3](capturas/analisis_pagina3.png) |
+
+| Problema | Resultado |
+| --- | --- |
+| 1 | **O(n² log n)** — tres ciclos anidados: (n/2+1) × (n/2) × (log₂n+1) |
+| 2 | **O(n)** — el `break` deja el ciclo interno en una sola vuelta |
+| 3 | **O(n²)** — (n/3) × (n/4) = n²/12 |
+
 ## Resultados
 
 Estos son los datos que salieron al correrlo. La columna **iteraciones** es cuántas vueltas dio el ciclo más interno, y sirve para comprobar que el análisis de complejidad está bien.
@@ -82,6 +97,10 @@ Estos son los datos que salieron al correrlo. La columna **iteraciones** es cuá
 | 10,000 | 350,070,000 | 1.042700 | |
 | 100,000 | 42,500,850,000 | 135.077800 | |
 | 1,000,000 | 5,000,010,000,000 | 15,891.218100 | _estimado_ |
+
+La salida del programa, tal cual aparece en la terminal:
+
+![Corrida del problema 1](capturas/corrida_problema1.png)
 
 ![Gráfica del problema 1](resultados/problema1.svg)
 
@@ -99,6 +118,10 @@ Cada vez que n se multiplica por 10, el tiempo se multiplica por unas 100 a 130 
 | 100,000 | 100,000 | 0.001024000 |
 | 1,000,000 | 1,000,000 | 0.008192000 |
 
+La salida del programa, tal cual aparece en la terminal:
+
+![Corrida del problema 2](capturas/corrida_problema2.png)
+
 ![Gráfica del problema 2](resultados/problema2.svg)
 
 Aquí multiplicar n por 10 multiplica el tiempo por 10. Con un millón todavía tarda menos de una centésima de segundo, aunque el código tenga dos ciclos anidados: el `break` lo vuelve lineal.
@@ -114,6 +137,10 @@ Aquí multiplicar n por 10 multiplica el tiempo por 10. Con un millón todavía 
 | 10,000 | 8,332,500 | 0.007987000 |
 | 100,000 | 833,325,000 | 0.857292000 |
 | 1,000,000 | 83,333,250,000 | 84.041700 |
+
+La salida del programa, tal cual aparece en la terminal:
+
+![Corrida del problema 3](capturas/corrida_problema3.png)
 
 ![Gráfica del problema 3](resultados/problema3.svg)
 
