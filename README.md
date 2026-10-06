@@ -18,7 +18,7 @@ Los programas están implementados en **Elixir**.
 | `comun.exs` | Lo que comparten los tres: el cronómetro, la tabla en CSV y el dibujo de la gráfica |
 | `correr_todo.exs` | Corre los tres problemas de una sola vez |
 | `resultados/` | Las tablas (`.csv`) y las gráficas (`.svg`) que genera el programa |
-| `respuestas/` | El PDF con el procedimiento completo del cálculo de complejidad |
+| `respuestas/` | El PDF con el procedimiento de los cinco problemas |
 | `capturas/` | Las imágenes que se usan en este README |
 
 La idea de dividirlo así es que cada problema se pueda correr y revisar por separado, y que toda la parte repetida (medir, guardar, graficar) esté en un solo lugar en vez de copiada tres veces.
@@ -70,7 +70,7 @@ Las gráficas tienen los dos ejes en escala logarítmica, porque los tiempos van
 
 ## El cálculo de la complejidad
 
-El procedimiento completo, ciclo por ciclo, está en **[`respuestas/complejidad.pdf`](respuestas/complejidad.pdf)**. Estas son sus tres páginas:
+El procedimiento completo está en **[`respuestas/complejidad.pdf`](respuestas/complejidad.pdf)**, que cubre los cinco problemas del laboratorio. Estas son las páginas de los tres programas:
 
 | Problema 1 | Problema 2 | Problema 3 |
 | --- | --- | --- |
@@ -81,6 +81,11 @@ El procedimiento completo, ciclo por ciclo, está en **[`respuestas/complejidad.
 | 1 | **O(n² log n)** — tres ciclos anidados: (n/2+1) × (n/2) × (log₂n+1) |
 | 2 | **O(n)** — el `break` deja el ciclo interno en una sola vuelta |
 | 3 | **O(n²)** — (n/3) × (n/4) = n²/12 |
+
+El PDF trae además los dos problemas que no llevan código:
+
+- **Problema 4** — mejor caso, caso promedio y peor caso de Búsqueda Lineal, Búsqueda Binaria y Quick Sort, con las recurrencias resueltas.
+- **Problema 5** — los tres enunciados de verdadero o falso, con la justificación de cada uno.
 
 ## Resultados
 
